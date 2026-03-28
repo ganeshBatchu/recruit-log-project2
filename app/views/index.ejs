@@ -1,0 +1,49 @@
+<%- include('layout/header') %>
+
+<div class="text-center mb-5">
+  <h1 class="display-4">Recruit.log</h1>
+  <p class="lead text-muted">Mapping CS Internship & Job Outcomes — MongoDB Edition</p>
+</div>
+
+<div class="row g-4 mb-5">
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <h2 class="display-5"><%= stats.totalCompanies %></h2>
+      <p class="text-muted mb-0">Companies</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <h2 class="display-5"><%= stats.totalListings %></h2>
+      <p class="text-muted mb-0">Job Listings</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <h2 class="display-5"><%= stats.totalApplicants %></h2>
+      <p class="text-muted mb-0">Applicants</p>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card text-center p-4">
+      <h2 class="display-5"><%= stats.totalApplications %></h2>
+      <p class="text-muted mb-0">Applications Submitted</p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card text-center p-4">
+      <h2 class="display-5 text-success"><%= stats.acceptedOffers %></h2>
+      <p class="text-muted mb-0">Accepted Offers</p>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mt-5">
+  <a href="/companies" class="btn btn-dark btn-lg me-2">Browse Companies</a>
+  <a href="/applicants" class="btn btn-outline-dark btn-lg">View Applicants</a>
+</div>
+
+<%- include('layout/footer') %>

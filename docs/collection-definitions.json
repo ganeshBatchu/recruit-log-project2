@@ -1,0 +1,320 @@
+{
+  "_comment": "Recruit.log MongoDB Collection Definitions — 2 example documents per collection with inline schema notes",
+
+  "companies": [
+    {
+      "_comment": "COMPANIES COLLECTION: Root entity representing a hiring company. Each company embeds its job_listings array, which in turn embeds requirements and type-specific details. This denormalizes the Project 1 tables: Company, Job_Listing, Internship, Full_Time, Listing_Requirement, and Skill into a single hierarchical document.",
+
+      "company_name": "Google",
+      "_comment_company_name": "Natural key — unique identifier for the company (replaces surrogate company_id from SQL)",
+      "industry": "Technology",
+      "_comment_industry": "Free-text industry classification",
+      "company_size": "enterprise",
+      "_comment_company_size": "Enum: startup | mid | large | enterprise — categorical size bucket",
+      "headquarters_location": "Mountain View, CA",
+      "website_url": "https://google.com",
+
+      "job_listings": [
+        {
+          "_comment_listing": "EMBEDDED JOB_LISTING: Each listing lives inside its parent company document. This avoids cross-collection joins when querying 'all listings for a company'. The listing_id is a local identifier carried over from the SQL migration.",
+
+          "listing_id": 1,
+          "title": "SWE Intern Summer 2026",
+          "role_type": "internship",
+          "_comment_role_type": "Discriminator field: internship | full-time | co-op — determines which detail sub-document is populated",
+          "location": "Mountain View, CA",
+          "posted_date": "2025-09-01",
+          "closing_date": "2026-01-15",
+          "is_active": true,
+          "salary_min": 9500,
+          "salary_max": 11000,
+          "_comment_salary": "For internships this is monthly pay; for full-time this is annual salary",
+          "description": "Google SWE internship for BS/MS students",
+          "experience_level": "entry",
+          "_comment_experience_level": "Enum: entry | mid | senior",
+          "listing_type": "internship",
+          "_comment_listing_type": "Subtype discriminator used to match the correct detail sub-document below",
+
+          "internship_details": {
+            "_comment": "EMBEDDED INTERNSHIP SUBTYPE: Only populated when listing_type='internship'. Replaces the Internship table from Project 1. Null for full-time listings.",
+            "season": "summer",
+            "is_coop": false,
+            "duration": "12 weeks"
+          },
+          "full_time_details": null,
+
+          "requirements": [
+            {
+              "_comment": "EMBEDDED REQUIREMENT: Denormalizes the Listing_Requirement + Skill join from SQL. Each requirement references a skill by name (not by foreign key) and specifies whether it is required vs. preferred.",
+              "skill_name": "Python",
+              "skill_type": "language",
+              "_comment_skill_type": "Enum: language | framework | tool | concept — categorizes the skill",
+              "is_required": true,
+              "desired_proficiency": "intermediate"
+            },
+            {
+              "skill_name": "Java",
+              "skill_type": "language",
+              "is_required": false,
+              "desired_proficiency": "intermediate"
+            }
+          ]
+        },
+        {
+          "_comment_listing": "Full-time listing example — internship_details is null, full_time_details is populated instead",
+
+          "listing_id": 8,
+          "title": "SWE L3 New Grad",
+          "role_type": "full-time",
+          "location": "Mountain View, CA",
+          "posted_date": "2025-08-01",
+          "closing_date": "2026-03-01",
+          "is_active": true,
+          "salary_min": 150000,
+          "salary_max": 185000,
+          "description": "Google new grad SWE position",
+          "experience_level": "entry",
+          "listing_type": "full_time",
+
+          "internship_details": null,
+          "full_time_details": {
+            "_comment": "EMBEDDED FULL_TIME SUBTYPE: Only populated when listing_type='full_time'. Replaces the Full_Time table from Project 1.",
+            "employment_type": "full-time",
+            "signing_bonus": 30000,
+            "remote_policy": "onsite"
+          },
+
+          "requirements": [
+            { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "advanced" },
+            { "skill_name": "System Design", "skill_type": "concept", "is_required": true, "desired_proficiency": "intermediate" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Second company example — demonstrates a company with one internship listing that has an empty requirements array and one full-time listing",
+
+      "company_name": "Meta",
+      "industry": "Technology",
+      "company_size": "enterprise",
+      "headquarters_location": "Menlo Park, CA",
+      "website_url": "https://meta.com",
+
+      "job_listings": [
+        {
+          "listing_id": 2,
+          "title": "Production Engineering Intern",
+          "role_type": "internship",
+          "location": "Menlo Park, CA",
+          "posted_date": "2025-09-15",
+          "closing_date": "2026-02-01",
+          "is_active": true,
+          "salary_min": 9000,
+          "salary_max": 10000,
+          "description": "Meta production engineering intern role",
+          "experience_level": "entry",
+          "listing_type": "internship",
+          "internship_details": { "season": "summer", "is_coop": false, "duration": "12 weeks" },
+          "full_time_details": null,
+          "requirements": [
+            { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+            { "skill_name": "C++", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+            { "skill_name": "Docker", "skill_type": "tool", "is_required": false, "desired_proficiency": "beginner" }
+          ]
+        },
+        {
+          "_comment_listing": "Full-time listing with an empty requirements array — not all listings specify skill requirements",
+          "listing_id": 9,
+          "title": "Production Engineer E3",
+          "role_type": "full-time",
+          "location": "Menlo Park, CA",
+          "posted_date": "2025-09-01",
+          "closing_date": "2026-02-01",
+          "is_active": true,
+          "salary_min": 140000,
+          "salary_max": 170000,
+          "description": "Meta PE new grad role",
+          "experience_level": "entry",
+          "listing_type": "full_time",
+          "internship_details": null,
+          "full_time_details": { "employment_type": "full-time", "signing_bonus": 25000, "remote_policy": "hybrid" },
+          "requirements": []
+        }
+      ]
+    }
+  ],
+
+  "applicants": [
+    {
+      "_comment": "APPLICANTS COLLECTION: Root entity representing a student or job-seeker. Embeds skills (replacing Applicant_Skill + Skill join) and applications (replacing Application + its foreign keys to Applicant and Job_Listing). References to companies/listings are stored as denormalized name strings rather than ObjectId refs — this trades referential integrity for read performance and simpler queries.",
+
+      "email": "alice@neu.edu",
+      "_comment_email": "Natural key — unique identifier for the applicant",
+      "username": "alice_dev",
+      "university": "Northeastern University",
+      "gpa": 3.85,
+      "graduation_year": 2026,
+      "years_of_experience": 1,
+      "degree_level": "BS",
+      "_comment_degree_level": "Enum: BS | MS | PhD",
+      "is_anonymized": true,
+      "_comment_is_anonymized": "Business rule: all applicant data is anonymized by default (no real names stored). Advisors see aggregate data only unless is_anonymized=false.",
+
+      "skills": [
+        {
+          "_comment": "EMBEDDED SKILL: Denormalizes the Applicant_Skill join table from SQL. Each skill includes the applicant's self-reported proficiency and experience duration.",
+          "skill_name": "Python",
+          "skill_type": "language",
+          "proficiency_level": "advanced",
+          "_comment_proficiency": "Enum: beginner | intermediate | advanced",
+          "years_used": 3
+        },
+        { "skill_name": "Java", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+        { "skill_name": "React", "skill_type": "framework", "proficiency_level": "intermediate", "years_used": 1 },
+        { "skill_name": "Git", "skill_type": "tool", "proficiency_level": "advanced", "years_used": 3 }
+      ],
+
+      "applications": [
+        {
+          "_comment": "EMBEDDED APPLICATION: Denormalizes the Application table from SQL. Instead of foreign keys to company_id and listing_id, we store company_name and listing_title as denormalized strings. This allows querying an applicant's full application history in a single document read.",
+
+          "company_name": "Google",
+          "listing_title": "SWE Intern Summer 2026",
+          "applied_date": "2025-09-15",
+          "status": "accepted",
+          "_comment_status": "Enum: applied | accepted | rejected | withdrawn — tracks current application state",
+          "rejection_stage": null,
+          "_comment_rejection_stage": "Populated only when status='rejected'. Enum: application | OA | phoneScreen | interview. Null otherwise. Supports business rule: rejections are tracked at specific pipeline stages.",
+          "offer_salary": 10500,
+          "notes": "Passed all rounds",
+          "is_active": true,
+          "_comment_is_active": "Business rule: applications can be deactivated (e.g., after withdrawal) but not deleted"
+        },
+        {
+          "_comment": "Example of a rejected application — rejection_stage captures where in the pipeline the rejection occurred",
+          "company_name": "Stripe",
+          "listing_title": "Backend Intern",
+          "applied_date": "2025-10-10",
+          "status": "rejected",
+          "rejection_stage": "interview",
+          "offer_salary": null,
+          "notes": "Final round rejection",
+          "is_active": true
+        },
+        {
+          "company_name": "Figma",
+          "listing_title": "Frontend Intern",
+          "applied_date": "2025-10-20",
+          "status": "rejected",
+          "rejection_stage": "OA",
+          "offer_salary": null,
+          "notes": "Failed online assessment",
+          "is_active": true
+        },
+        {
+          "_comment": "Example of a withdrawn application — is_active set to false",
+          "company_name": "Datadog",
+          "listing_title": "Co-op Data Engineer",
+          "applied_date": "2025-10-15",
+          "status": "withdrawn",
+          "rejection_stage": null,
+          "offer_salary": null,
+          "notes": "Withdrew after Google offer",
+          "is_active": false
+        },
+        {
+          "company_name": "Google",
+          "listing_title": "SWE L3 New Grad",
+          "applied_date": "2026-01-05",
+          "status": "applied",
+          "rejection_stage": null,
+          "offer_salary": null,
+          "notes": "Pending review",
+          "is_active": true
+        }
+      ]
+    },
+
+    {
+      "_comment": "Second applicant example — MS student with strong quant background and multiple offers",
+
+      "email": "henry@cornell.edu",
+      "username": "henry_quant",
+      "university": "Cornell University",
+      "gpa": 3.95,
+      "graduation_year": 2025,
+      "years_of_experience": 2,
+      "degree_level": "MS",
+      "is_anonymized": true,
+
+      "skills": [
+        { "skill_name": "Python", "skill_type": "language", "proficiency_level": "advanced", "years_used": 4 },
+        { "skill_name": "C++", "skill_type": "language", "proficiency_level": "advanced", "years_used": 4 },
+        { "skill_name": "Machine Learning", "skill_type": "concept", "proficiency_level": "advanced", "years_used": 3 },
+        { "skill_name": "System Design", "skill_type": "concept", "proficiency_level": "advanced", "years_used": 2 },
+        { "skill_name": "SQL", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 }
+      ],
+
+      "applications": [
+        { "company_name": "Jane Street", "listing_title": "Trading Intern", "applied_date": "2025-09-05", "status": "accepted", "rejection_stage": null, "offer_salary": 16000, "notes": "Exceptional quant skills", "is_active": true },
+        { "company_name": "Citadel", "listing_title": "Quantitative Researcher", "applied_date": "2025-08-15", "status": "accepted", "rejection_stage": null, "offer_salary": 300000, "notes": "Top performer", "is_active": true },
+        { "company_name": "Anthropic", "listing_title": "Research Engineer", "applied_date": "2025-09-20", "status": "rejected", "rejection_stage": "interview", "offer_salary": null, "notes": "Chose quant over research", "is_active": true }
+      ]
+    }
+  ],
+
+  "advisors": [
+    {
+      "_comment": "ADVISORS COLLECTION: Root entity representing a faculty member, career counselor, or institutional researcher who monitors job listings. Embeds bookmarks (replacing the Advisor_Bookmark join table from SQL). Advisors do NOT see individual applicant data unless is_anonymized=false; they primarily interact with aggregate statistics and bookmarked listings.",
+
+      "name": "Dr. Sarah Chen",
+      "email": "schen@neu.edu",
+      "_comment_email": "Natural key — unique identifier for the advisor",
+      "role": "faculty",
+      "_comment_role": "Enum: faculty | careerCenter | institutionalResearcher | consultant — determines dashboard permissions and data visibility",
+      "institution": "Northeastern University",
+      "department": "Computer Science",
+
+      "bookmarks": [
+        {
+          "_comment": "EMBEDDED BOOKMARK: Denormalizes the Advisor_Bookmark table from SQL. References a listing by company_name + listing_title (denormalized strings). Tracks when the advisor last viewed the listing and whether it is still actively bookmarked.",
+          "company_name": "Google",
+          "listing_title": "SWE Intern Summer 2026",
+          "last_viewed": "2025-11-01",
+          "is_bookmarked": true
+        },
+        { "company_name": "Stripe", "listing_title": "Backend Intern", "last_viewed": "2025-11-05", "is_bookmarked": true },
+        {
+          "_comment": "Example of an un-bookmarked entry — kept in history for analytics but is_bookmarked=false",
+          "company_name": "Datadog",
+          "listing_title": "Co-op Data Engineer",
+          "last_viewed": "2025-11-10",
+          "is_bookmarked": false
+        }
+      ]
+    },
+
+    {
+      "_comment": "Second advisor example — institutional researcher role with limited bookmarks",
+
+      "name": "James Rodriguez",
+      "email": "jrod@berkeley.edu",
+      "role": "institutionalResearcher",
+      "institution": "UC Berkeley",
+      "department": "Institutional Research",
+
+      "bookmarks": [
+        { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "last_viewed": "2025-11-20", "is_bookmarked": false },
+        { "company_name": "Google", "listing_title": "SWE L3 New Grad", "last_viewed": "2025-11-20", "is_bookmarked": true }
+      ]
+    }
+  ],
+
+  "_schema_design_notes": {
+    "normalization_to_denormalization": "Project 1 used 11 normalized SQL tables: Company, Job_Listing, Internship, Full_Time, Skill, Listing_Requirement, Applicant, Applicant_Skill, Application, Advisor, Advisor_Bookmark. Project 2 collapses these into 3 MongoDB collections by embedding child entities within their natural parents.",
+    "embedding_rationale": "Documents are structured around access patterns: (1) companies own listings and their requirements, (2) applicants own their skills and application history, (3) advisors own their bookmarks. Each pattern maps to a single-document read.",
+    "cross_collection_references": "Instead of ObjectId references, denormalized string fields (company_name, listing_title) link applications/bookmarks to listings. This trades write-time consistency for read-time simplicity — appropriate for an analytics-oriented read-heavy workload.",
+    "subtype_pattern": "The Internship/Full_Time specialization hierarchy uses a discriminator field (listing_type) with mutually exclusive sub-documents (internship_details / full_time_details), implementing MongoDB's polymorphic pattern."
+  }
+}

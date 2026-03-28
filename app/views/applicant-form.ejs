@@ -1,0 +1,54 @@
+<%- include('layout/header') %>
+
+<h1><%= applicant ? 'Edit' : 'Add' %> Applicant</h1>
+
+<div class="card p-4 mt-3">
+  <form action="<%= action %>" method="POST">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" required value="<%= applicant ? applicant.username : '' %>">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required value="<%= applicant ? applicant.email : '' %>">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">University</label>
+      <input type="text" name="university" class="form-control" required value="<%= applicant ? applicant.university : '' %>">
+    </div>
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <label class="form-label">GPA</label>
+        <input type="number" step="0.01" min="0" max="4" name="gpa" class="form-control" required value="<%= applicant ? applicant.gpa : '' %>">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label class="form-label">Graduation Year</label>
+        <input type="number" name="graduation_year" class="form-control" required value="<%= applicant ? applicant.graduation_year : '' %>">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label class="form-label">Years of Experience</label>
+        <input type="number" min="0" name="years_of_experience" class="form-control" required value="<%= applicant ? applicant.years_of_experience : '' %>">
+      </div>
+      <div class="col-md-3 mb-3">
+        <label class="form-label">Degree Level</label>
+        <select name="degree_level" class="form-select" required>
+          <option value="">Select...</option>
+          <% ['BS', 'MS', 'PhD'].forEach(d => { %>
+            <option value="<%= d %>" <%= applicant && applicant.degree_level === d ? 'selected' : '' %>><%= d %></option>
+          <% }) %>
+        </select>
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" name="is_anonymized" value="true" class="form-check-input" id="anonCheck"
+        <%= applicant && applicant.is_anonymized ? 'checked' : '' %>>
+      <label class="form-check-label" for="anonCheck">Anonymize public data</label>
+    </div>
+    <button type="submit" class="btn btn-dark"><%= applicant ? 'Update' : 'Create' %> Applicant</button>
+    <a href="/applicants" class="btn btn-outline-secondary ms-2">Cancel</a>
+  </form>
+</div>
+
+<%- include('layout/footer') %>

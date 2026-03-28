@@ -1,0 +1,39 @@
+<%- include('layout/header') %>
+
+<h1><%= company ? 'Edit' : 'Add' %> Company</h1>
+
+<div class="card p-4 mt-3">
+  <form action="<%= action %>" method="POST">
+    <div class="mb-3">
+      <label class="form-label">Company Name</label>
+      <input type="text" name="company_name" class="form-control" required value="<%= company ? company.company_name : '' %>">
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Industry</label>
+        <input type="text" name="industry" class="form-control" required value="<%= company ? company.industry : '' %>">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Company Size</label>
+        <select name="company_size" class="form-select" required>
+          <option value="">Select...</option>
+          <% ['startup', 'mid', 'large', 'enterprise'].forEach(s => { %>
+            <option value="<%= s %>" <%= company && company.company_size === s ? 'selected' : '' %>><%= s %></option>
+          <% }) %>
+        </select>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Headquarters Location</label>
+      <input type="text" name="headquarters_location" class="form-control" value="<%= company ? company.headquarters_location : '' %>">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Website URL</label>
+      <input type="url" name="website_url" class="form-control" value="<%= company ? company.website_url : '' %>">
+    </div>
+    <button type="submit" class="btn btn-dark"><%= company ? 'Update' : 'Create' %> Company</button>
+    <a href="/companies" class="btn btn-outline-secondary ms-2">Cancel</a>
+  </form>
+</div>
+
+<%- include('layout/footer') %>

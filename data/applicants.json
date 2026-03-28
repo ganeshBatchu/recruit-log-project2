@@ -1,0 +1,274 @@
+[
+  {
+    "email": "alice@neu.edu",
+    "username": "alice_dev",
+    "university": "Northeastern University",
+    "gpa": 3.85,
+    "graduation_year": 2026,
+    "years_of_experience": 1,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Python", "skill_type": "language", "proficiency_level": "advanced", "years_used": 3 },
+      { "skill_name": "Java", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "React", "skill_type": "framework", "proficiency_level": "intermediate", "years_used": 1 },
+      { "skill_name": "Git", "skill_type": "tool", "proficiency_level": "advanced", "years_used": 3 }
+    ],
+    "applications": [
+      { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "applied_date": "2025-09-15", "status": "accepted", "rejection_stage": null, "offer_salary": 10500, "notes": "Passed all rounds", "is_active": true },
+      { "company_name": "Stripe", "listing_title": "Backend Intern", "applied_date": "2025-10-10", "status": "rejected", "rejection_stage": "interview", "offer_salary": null, "notes": "Final round rejection", "is_active": true },
+      { "company_name": "Figma", "listing_title": "Frontend Intern", "applied_date": "2025-10-20", "status": "rejected", "rejection_stage": "OA", "offer_salary": null, "notes": "Failed online assessment", "is_active": true },
+      { "company_name": "Datadog", "listing_title": "Co-op Data Engineer", "applied_date": "2025-10-15", "status": "withdrawn", "rejection_stage": null, "offer_salary": null, "notes": "Withdrew after Google offer", "is_active": false },
+      { "company_name": "Google", "listing_title": "SWE L3 New Grad", "applied_date": "2026-01-05", "status": "applied", "rejection_stage": null, "offer_salary": null, "notes": "Pending review", "is_active": true }
+    ]
+  },
+  {
+    "email": "bob@mit.edu",
+    "username": "bob_algo",
+    "university": "MIT",
+    "gpa": 3.92,
+    "graduation_year": 2026,
+    "years_of_experience": 2,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Python", "skill_type": "language", "proficiency_level": "advanced", "years_used": 4 },
+      { "skill_name": "C++", "skill_type": "language", "proficiency_level": "advanced", "years_used": 3 },
+      { "skill_name": "Machine Learning", "skill_type": "concept", "proficiency_level": "advanced", "years_used": 2 },
+      { "skill_name": "System Design", "skill_type": "concept", "proficiency_level": "intermediate", "years_used": 1 }
+    ],
+    "applications": [
+      { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "applied_date": "2025-09-10", "status": "accepted", "rejection_stage": null, "offer_salary": 11000, "notes": "Strong performance", "is_active": true },
+      { "company_name": "Jane Street", "listing_title": "Trading Intern", "applied_date": "2025-09-20", "status": "accepted", "rejection_stage": null, "offer_salary": 15500, "notes": "Top candidate", "is_active": true },
+      { "company_name": "Palantir", "listing_title": "Defense Tech Intern", "applied_date": "2025-09-05", "status": "rejected", "rejection_stage": "interview", "offer_salary": null, "notes": "System design round", "is_active": true },
+      { "company_name": "Google", "listing_title": "SWE L3 New Grad", "applied_date": "2025-12-01", "status": "accepted", "rejection_stage": null, "offer_salary": 175000, "notes": "Return offer from internship", "is_active": true },
+      { "company_name": "Citadel", "listing_title": "Quantitative Researcher", "applied_date": "2025-09-01", "status": "rejected", "rejection_stage": "OA", "offer_salary": null, "notes": "Quant assessment cutoff", "is_active": true }
+    ]
+  },
+  {
+    "email": "carol@stanford.edu",
+    "username": "carol_ml",
+    "university": "Stanford University",
+    "gpa": 3.78,
+    "graduation_year": 2025,
+    "years_of_experience": 1,
+    "degree_level": "MS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Python", "skill_type": "language", "proficiency_level": "advanced", "years_used": 3 },
+      { "skill_name": "JavaScript", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "React", "skill_type": "framework", "proficiency_level": "advanced", "years_used": 2 },
+      { "skill_name": "Django", "skill_type": "framework", "proficiency_level": "intermediate", "years_used": 1 },
+      { "skill_name": "Machine Learning", "skill_type": "concept", "proficiency_level": "intermediate", "years_used": 1 }
+    ],
+    "applications": [
+      { "company_name": "Figma", "listing_title": "Frontend Intern", "applied_date": "2025-10-20", "status": "accepted", "rejection_stage": null, "offer_salary": 8500, "notes": "Great culture fit", "is_active": true },
+      { "company_name": "Stripe", "listing_title": "Backend Intern", "applied_date": "2025-10-15", "status": "rejected", "rejection_stage": "application", "offer_salary": null, "notes": "Resume screen rejection", "is_active": true },
+      { "company_name": "Anthropic", "listing_title": "Research Engineer", "applied_date": "2025-10-01", "status": "accepted", "rejection_stage": null, "offer_salary": 210000, "notes": "Research role match", "is_active": true },
+      { "company_name": "Scale AI", "listing_title": "ML Engineer", "applied_date": "2025-10-15", "status": "rejected", "rejection_stage": "interview", "offer_salary": null, "notes": "ML depth insufficient", "is_active": true }
+    ]
+  },
+  {
+    "email": "dave@gatech.edu",
+    "username": "dave_sys",
+    "university": "Georgia Tech",
+    "gpa": 3.65,
+    "graduation_year": 2026,
+    "years_of_experience": 0,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Java", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "Spring Boot", "skill_type": "framework", "proficiency_level": "beginner", "years_used": 1 },
+      { "skill_name": "SQL", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "Docker", "skill_type": "tool", "proficiency_level": "beginner", "years_used": 0 }
+    ],
+    "applications": [
+      { "company_name": "Stripe", "listing_title": "Backend Intern", "applied_date": "2025-10-20", "status": "rejected", "rejection_stage": "OA", "offer_salary": null, "notes": "SQL portion failed", "is_active": true },
+      { "company_name": "Palantir", "listing_title": "Defense Tech Intern", "applied_date": "2025-09-01", "status": "rejected", "rejection_stage": "application", "offer_salary": null, "notes": "Resume filtered", "is_active": true },
+      { "company_name": "Datadog", "listing_title": "Co-op Data Engineer", "applied_date": "2025-10-15", "status": "accepted", "rejection_stage": null, "offer_salary": 8500, "notes": "Strong SQL skills", "is_active": true }
+    ]
+  },
+  {
+    "email": "eve@berkeley.edu",
+    "username": "eve_data",
+    "university": "UC Berkeley",
+    "gpa": 3.91,
+    "graduation_year": 2025,
+    "years_of_experience": 2,
+    "degree_level": "MS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Python", "skill_type": "language", "proficiency_level": "advanced", "years_used": 4 },
+      { "skill_name": "SQL", "skill_type": "language", "proficiency_level": "advanced", "years_used": 3 },
+      { "skill_name": "AWS", "skill_type": "tool", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "Machine Learning", "skill_type": "concept", "proficiency_level": "advanced", "years_used": 3 },
+      { "skill_name": "Docker", "skill_type": "tool", "proficiency_level": "intermediate", "years_used": 1 }
+    ],
+    "applications": [
+      { "company_name": "Google", "listing_title": "SWE L3 New Grad", "applied_date": "2025-09-01", "status": "rejected", "rejection_stage": "interview", "offer_salary": null, "notes": "System design round", "is_active": true },
+      { "company_name": "Anthropic", "listing_title": "Research Engineer", "applied_date": "2025-10-01", "status": "accepted", "rejection_stage": null, "offer_salary": 230000, "notes": "Strong ML background", "is_active": true },
+      { "company_name": "Scale AI", "listing_title": "ML Engineer", "applied_date": "2025-10-20", "status": "accepted", "rejection_stage": null, "offer_salary": 175000, "notes": "Good fit", "is_active": true },
+      { "company_name": "Ramp", "listing_title": "Backend Engineer", "applied_date": "2025-10-25", "status": "accepted", "rejection_stage": null, "offer_salary": 155000, "notes": "Backend strength", "is_active": true }
+    ]
+  },
+  {
+    "email": "frank@cmu.edu",
+    "username": "frank_sec",
+    "university": "Carnegie Mellon",
+    "gpa": 3.70,
+    "graduation_year": 2026,
+    "years_of_experience": 1,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "C++", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "Python", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "System Design", "skill_type": "concept", "proficiency_level": "beginner", "years_used": 1 }
+    ],
+    "applications": [
+      { "company_name": "Palantir", "listing_title": "Defense Tech Intern", "applied_date": "2025-08-20", "status": "accepted", "rejection_stage": null, "offer_salary": 10000, "notes": "Forward deployed match", "is_active": true },
+      { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "applied_date": "2025-09-20", "status": "rejected", "rejection_stage": "phoneScreen", "offer_salary": null, "notes": "Phone screen cutoff", "is_active": true }
+    ]
+  },
+  {
+    "email": "grace@umich.edu",
+    "username": "grace_web",
+    "university": "University of Michigan",
+    "gpa": 3.55,
+    "graduation_year": 2027,
+    "years_of_experience": 0,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "JavaScript", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 1 },
+      { "skill_name": "TypeScript", "skill_type": "language", "proficiency_level": "beginner", "years_used": 1 },
+      { "skill_name": "React", "skill_type": "framework", "proficiency_level": "beginner", "years_used": 1 },
+      { "skill_name": "Node.js", "skill_type": "framework", "proficiency_level": "beginner", "years_used": 0 }
+    ],
+    "applications": [
+      { "company_name": "Figma", "listing_title": "Frontend Intern", "applied_date": "2025-11-01", "status": "applied", "rejection_stage": null, "offer_salary": null, "notes": "Awaiting OA", "is_active": true }
+    ]
+  },
+  {
+    "email": "henry@cornell.edu",
+    "username": "henry_quant",
+    "university": "Cornell University",
+    "gpa": 3.95,
+    "graduation_year": 2025,
+    "years_of_experience": 2,
+    "degree_level": "MS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Python", "skill_type": "language", "proficiency_level": "advanced", "years_used": 4 },
+      { "skill_name": "C++", "skill_type": "language", "proficiency_level": "advanced", "years_used": 4 },
+      { "skill_name": "Machine Learning", "skill_type": "concept", "proficiency_level": "advanced", "years_used": 3 },
+      { "skill_name": "System Design", "skill_type": "concept", "proficiency_level": "advanced", "years_used": 2 },
+      { "skill_name": "SQL", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 }
+    ],
+    "applications": [
+      { "company_name": "Jane Street", "listing_title": "Trading Intern", "applied_date": "2025-09-05", "status": "accepted", "rejection_stage": null, "offer_salary": 16000, "notes": "Exceptional quant skills", "is_active": true },
+      { "company_name": "Citadel", "listing_title": "Quantitative Researcher", "applied_date": "2025-08-15", "status": "accepted", "rejection_stage": null, "offer_salary": 300000, "notes": "Top performer", "is_active": true },
+      { "company_name": "Anthropic", "listing_title": "Research Engineer", "applied_date": "2025-09-20", "status": "rejected", "rejection_stage": "interview", "offer_salary": null, "notes": "Chose quant over research", "is_active": true }
+    ]
+  },
+  {
+    "email": "iris@uiuc.edu",
+    "username": "iris_cloud",
+    "university": "UIUC",
+    "gpa": 3.60,
+    "graduation_year": 2026,
+    "years_of_experience": 1,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Python", "skill_type": "language", "proficiency_level": "intermediate", "years_used": 2 },
+      { "skill_name": "Docker", "skill_type": "tool", "proficiency_level": "intermediate", "years_used": 1 },
+      { "skill_name": "AWS", "skill_type": "tool", "proficiency_level": "intermediate", "years_used": 1 },
+      { "skill_name": "Git", "skill_type": "tool", "proficiency_level": "advanced", "years_used": 2 }
+    ],
+    "applications": [
+      { "company_name": "Datadog", "listing_title": "Co-op Data Engineer", "applied_date": "2025-10-10", "status": "rejected", "rejection_stage": "interview", "offer_salary": null, "notes": "Docker knowledge gaps", "is_active": true },
+      { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "applied_date": "2025-09-25", "status": "rejected", "rejection_stage": "OA", "offer_salary": null, "notes": "Algorithm section", "is_active": true }
+    ]
+  },
+  {
+    "email": "jack@purdue.edu",
+    "username": "jack_backend",
+    "university": "Purdue University",
+    "gpa": 3.42,
+    "graduation_year": 2027,
+    "years_of_experience": 0,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [
+      { "skill_name": "Java", "skill_type": "language", "proficiency_level": "beginner", "years_used": 1 },
+      { "skill_name": "SQL", "skill_type": "language", "proficiency_level": "beginner", "years_used": 1 },
+      { "skill_name": "Git", "skill_type": "tool", "proficiency_level": "intermediate", "years_used": 1 }
+    ],
+    "applications": [
+      { "company_name": "Stripe", "listing_title": "Backend Intern", "applied_date": "2025-11-01", "status": "applied", "rejection_stage": null, "offer_salary": null, "notes": "Pending", "is_active": true },
+      { "company_name": "Startup XYZ", "listing_title": "Full-Stack Engineer", "applied_date": "2025-11-15", "status": "accepted", "rejection_stage": null, "offer_salary": 95000, "notes": "Early team member", "is_active": true }
+    ]
+  },
+  {
+    "email": "kate@columbia.edu",
+    "username": "kate_ai",
+    "university": "Columbia University",
+    "gpa": 3.88,
+    "graduation_year": 2025,
+    "years_of_experience": 3,
+    "degree_level": "PhD",
+    "is_anonymized": true,
+    "skills": [],
+    "applications": []
+  },
+  {
+    "email": "leo@uw.edu",
+    "username": "leo_devops",
+    "university": "University of Washington",
+    "gpa": 3.72,
+    "graduation_year": 2026,
+    "years_of_experience": 1,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [],
+    "applications": []
+  },
+  {
+    "email": "mia@usc.edu",
+    "username": "mia_front",
+    "university": "USC",
+    "gpa": 3.50,
+    "graduation_year": 2026,
+    "years_of_experience": 0,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [],
+    "applications": []
+  },
+  {
+    "email": "noah@rice.edu",
+    "username": "noah_full",
+    "university": "Rice University",
+    "gpa": 3.68,
+    "graduation_year": 2026,
+    "years_of_experience": 1,
+    "degree_level": "BS",
+    "is_anonymized": true,
+    "skills": [],
+    "applications": []
+  },
+  {
+    "email": "olivia@neu.edu",
+    "username": "olivia_ds",
+    "university": "Northeastern University",
+    "gpa": 3.80,
+    "graduation_year": 2026,
+    "years_of_experience": 2,
+    "degree_level": "MS",
+    "is_anonymized": false,
+    "skills": [],
+    "applications": []
+  }
+]

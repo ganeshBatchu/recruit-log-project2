@@ -1,0 +1,8 @@
+{
+  "name": "recruit-log-queries",
+  "version": "1.0.0",
+  "description": "MongoDB queries for Recruit.log Project 2",
+  "dependencies": {
+    "mongodb": "^6.10.0"
+  }
+}

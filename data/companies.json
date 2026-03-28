@@ -1,0 +1,383 @@
+[
+  {
+    "company_name": "Google",
+    "industry": "Technology",
+    "company_size": "enterprise",
+    "headquarters_location": "Mountain View, CA",
+    "website_url": "https://google.com",
+    "job_listings": [
+      {
+        "listing_id": 1,
+        "title": "SWE Intern Summer 2026",
+        "role_type": "internship",
+        "location": "Mountain View, CA",
+        "posted_date": "2025-09-01",
+        "closing_date": "2026-01-15",
+        "is_active": true,
+        "salary_min": 9500,
+        "salary_max": 11000,
+        "description": "Google SWE internship for BS/MS students",
+        "experience_level": "entry",
+        "listing_type": "internship",
+        "internship_details": { "season": "summer", "is_coop": false, "duration": "12 weeks" },
+        "full_time_details": null,
+        "requirements": [
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "Java", "skill_type": "language", "is_required": false, "desired_proficiency": "intermediate" },
+          { "skill_name": "System Design", "skill_type": "concept", "is_required": false, "desired_proficiency": "beginner" }
+        ]
+      },
+      {
+        "listing_id": 8,
+        "title": "SWE L3 New Grad",
+        "role_type": "full-time",
+        "location": "Mountain View, CA",
+        "posted_date": "2025-08-01",
+        "closing_date": "2026-03-01",
+        "is_active": true,
+        "salary_min": 150000,
+        "salary_max": 185000,
+        "description": "Google new grad SWE position",
+        "experience_level": "entry",
+        "listing_type": "full_time",
+        "internship_details": null,
+        "full_time_details": { "employment_type": "full-time", "signing_bonus": 30000, "remote_policy": "onsite" },
+        "requirements": [
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "advanced" },
+          { "skill_name": "System Design", "skill_type": "concept", "is_required": true, "desired_proficiency": "intermediate" }
+        ]
+      }
+    ]
+  },
+  {
+    "company_name": "Meta",
+    "industry": "Technology",
+    "company_size": "enterprise",
+    "headquarters_location": "Menlo Park, CA",
+    "website_url": "https://meta.com",
+    "job_listings": [
+      {
+        "listing_id": 2,
+        "title": "Production Engineering Intern",
+        "role_type": "internship",
+        "location": "Menlo Park, CA",
+        "posted_date": "2025-09-15",
+        "closing_date": "2026-02-01",
+        "is_active": true,
+        "salary_min": 9000,
+        "salary_max": 10000,
+        "description": "Meta production engineering intern role",
+        "experience_level": "entry",
+        "listing_type": "internship",
+        "internship_details": { "season": "summer", "is_coop": false, "duration": "12 weeks" },
+        "full_time_details": null,
+        "requirements": [
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "C++", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "Docker", "skill_type": "tool", "is_required": false, "desired_proficiency": "beginner" }
+        ]
+      },
+      {
+        "listing_id": 9,
+        "title": "Production Engineer E3",
+        "role_type": "full-time",
+        "location": "Menlo Park, CA",
+        "posted_date": "2025-09-01",
+        "closing_date": "2026-02-01",
+        "is_active": true,
+        "salary_min": 140000,
+        "salary_max": 170000,
+        "description": "Meta PE new grad role",
+        "experience_level": "entry",
+        "listing_type": "full_time",
+        "internship_details": null,
+        "full_time_details": { "employment_type": "full-time", "signing_bonus": 25000, "remote_policy": "hybrid" },
+        "requirements": []
+      }
+    ]
+  },
+  {
+    "company_name": "Stripe",
+    "industry": "Fintech",
+    "company_size": "large",
+    "headquarters_location": "San Francisco, CA",
+    "website_url": "https://stripe.com",
+    "job_listings": [
+      {
+        "listing_id": 3,
+        "title": "Backend Intern",
+        "role_type": "internship",
+        "location": "San Francisco, CA",
+        "posted_date": "2025-10-01",
+        "closing_date": "2026-03-01",
+        "is_active": true,
+        "salary_min": 8500,
+        "salary_max": 9500,
+        "description": "Stripe backend engineering internship",
+        "experience_level": "entry",
+        "listing_type": "internship",
+        "internship_details": { "season": "summer", "is_coop": false, "duration": "12 weeks" },
+        "full_time_details": null,
+        "requirements": [
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "Java", "skill_type": "language", "is_required": false, "desired_proficiency": "intermediate" },
+          { "skill_name": "SQL", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" }
+        ]
+      }
+    ]
+  },
+  {
+    "company_name": "Figma",
+    "industry": "Design Tech",
+    "company_size": "mid",
+    "headquarters_location": "San Francisco, CA",
+    "website_url": "https://figma.com",
+    "job_listings": [
+      {
+        "listing_id": 4,
+        "title": "Frontend Intern",
+        "role_type": "internship",
+        "location": "San Francisco, CA",
+        "posted_date": "2025-10-15",
+        "closing_date": "2026-02-15",
+        "is_active": true,
+        "salary_min": 8000,
+        "salary_max": 9000,
+        "description": "Figma frontend engineering intern",
+        "experience_level": "entry",
+        "listing_type": "internship",
+        "internship_details": { "season": "summer", "is_coop": false, "duration": "10 weeks" },
+        "full_time_details": null,
+        "requirements": [
+          { "skill_name": "JavaScript", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "TypeScript", "skill_type": "language", "is_required": true, "desired_proficiency": "beginner" },
+          { "skill_name": "React", "skill_type": "framework", "is_required": true, "desired_proficiency": "intermediate" }
+        ]
+      }
+    ]
+  },
+  {
+    "company_name": "Palantir",
+    "industry": "Data Analytics",
+    "company_size": "large",
+    "headquarters_location": "Denver, CO",
+    "website_url": "https://palantir.com",
+    "job_listings": [
+      {
+        "listing_id": 5,
+        "title": "Defense Tech Intern",
+        "role_type": "internship",
+        "location": "Denver, CO",
+        "posted_date": "2025-08-15",
+        "closing_date": "2025-12-15",
+        "is_active": false,
+        "salary_min": 9000,
+        "salary_max": 10500,
+        "description": "Palantir forward deployed intern",
+        "experience_level": "entry",
+        "listing_type": "internship",
+        "internship_details": { "season": "summer", "is_coop": false, "duration": "12 weeks" },
+        "full_time_details": null,
+        "requirements": [
+          { "skill_name": "Java", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "System Design", "skill_type": "concept", "is_required": false, "desired_proficiency": "beginner" }
+        ]
+      }
+    ]
+  },
+  {
+    "company_name": "Jane Street",
+    "industry": "Finance",
+    "company_size": "mid",
+    "headquarters_location": "New York, NY",
+    "website_url": "https://janestreet.com",
+    "job_listings": [
+      {
+        "listing_id": 6,
+        "title": "Trading Intern",
+        "role_type": "internship",
+        "location": "New York, NY",
+        "posted_date": "2025-09-01",
+        "closing_date": "2025-12-01",
+        "is_active": false,
+        "salary_min": 14000,
+        "salary_max": 16000,
+        "description": "Jane Street quantitative trading intern",
+        "experience_level": "entry",
+        "listing_type": "internship",
+        "internship_details": { "season": "summer", "is_coop": false, "duration": "10 weeks" },
+        "full_time_details": null,
+        "requirements": [
+          { "skill_name": "C++", "skill_type": "language", "is_required": true, "desired_proficiency": "advanced" },
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "advanced" },
+          { "skill_name": "Machine Learning", "skill_type": "concept", "is_required": false, "desired_proficiency": "intermediate" }
+        ]
+      }
+    ]
+  },
+  {
+    "company_name": "Datadog",
+    "industry": "Cloud/DevOps",
+    "company_size": "large",
+    "headquarters_location": "New York, NY",
+    "website_url": "https://datadoghq.com",
+    "job_listings": [
+      {
+        "listing_id": 7,
+        "title": "Co-op Data Engineer",
+        "role_type": "co-op",
+        "location": "New York, NY",
+        "posted_date": "2025-10-01",
+        "closing_date": "2026-04-01",
+        "is_active": true,
+        "salary_min": 8000,
+        "salary_max": 9000,
+        "description": "Datadog 6-month data engineering co-op",
+        "experience_level": "entry",
+        "listing_type": "internship",
+        "internship_details": { "season": "spring", "is_coop": true, "duration": "26 weeks" },
+        "full_time_details": null,
+        "requirements": [
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "SQL", "skill_type": "language", "is_required": true, "desired_proficiency": "intermediate" },
+          { "skill_name": "Docker", "skill_type": "tool", "is_required": false, "desired_proficiency": "beginner" },
+          { "skill_name": "AWS", "skill_type": "tool", "is_required": false, "desired_proficiency": "beginner" }
+        ]
+      }
+    ]
+  },
+  {
+    "company_name": "Ramp",
+    "industry": "Fintech",
+    "company_size": "mid",
+    "headquarters_location": "New York, NY",
+    "website_url": "https://ramp.com",
+    "job_listings": [
+      {
+        "listing_id": 10,
+        "title": "Backend Engineer",
+        "role_type": "full-time",
+        "location": "New York, NY",
+        "posted_date": "2025-10-01",
+        "closing_date": null,
+        "is_active": true,
+        "salary_min": 135000,
+        "salary_max": 165000,
+        "description": "Ramp backend SWE mid-level",
+        "experience_level": "mid",
+        "listing_type": "full_time",
+        "internship_details": null,
+        "full_time_details": { "employment_type": "full-time", "signing_bonus": 20000, "remote_policy": "hybrid" },
+        "requirements": []
+      }
+    ]
+  },
+  {
+    "company_name": "Anthropic",
+    "industry": "AI",
+    "company_size": "mid",
+    "headquarters_location": "San Francisco, CA",
+    "website_url": "https://anthropic.com",
+    "job_listings": [
+      {
+        "listing_id": 11,
+        "title": "Research Engineer",
+        "role_type": "full-time",
+        "location": "San Francisco, CA",
+        "posted_date": "2025-09-15",
+        "closing_date": null,
+        "is_active": true,
+        "salary_min": 180000,
+        "salary_max": 250000,
+        "description": "Anthropic AI research engineering",
+        "experience_level": "mid",
+        "listing_type": "full_time",
+        "internship_details": null,
+        "full_time_details": { "employment_type": "full-time", "signing_bonus": 40000, "remote_policy": "remote" },
+        "requirements": [
+          { "skill_name": "Python", "skill_type": "language", "is_required": true, "desired_proficiency": "advanced" },
+          { "skill_name": "Machine Learning", "skill_type": "concept", "is_required": true, "desired_proficiency": "advanced" }
+        ]
+      }
+    ]
+  },
+  {
+    "company_name": "Scale AI",
+    "industry": "AI",
+    "company_size": "mid",
+    "headquarters_location": "San Francisco, CA",
+    "website_url": "https://scale.com",
+    "job_listings": [
+      {
+        "listing_id": 12,
+        "title": "ML Engineer",
+        "role_type": "full-time",
+        "location": "San Francisco, CA",
+        "posted_date": "2025-10-01",
+        "closing_date": "2026-01-15",
+        "is_active": true,
+        "salary_min": 145000,
+        "salary_max": 190000,
+        "description": "Scale AI ML engineering role",
+        "experience_level": "mid",
+        "listing_type": "full_time",
+        "internship_details": null,
+        "full_time_details": { "employment_type": "full-time", "signing_bonus": 15000, "remote_policy": "onsite" },
+        "requirements": []
+      }
+    ]
+  },
+  {
+    "company_name": "Citadel",
+    "industry": "Finance",
+    "company_size": "large",
+    "headquarters_location": "Chicago, IL",
+    "website_url": "https://citadel.com",
+    "job_listings": [
+      {
+        "listing_id": 13,
+        "title": "Quantitative Researcher",
+        "role_type": "full-time",
+        "location": "Chicago, IL",
+        "posted_date": "2025-08-01",
+        "closing_date": "2025-12-01",
+        "is_active": false,
+        "salary_min": 200000,
+        "salary_max": 350000,
+        "description": "Citadel quant research new grad",
+        "experience_level": "entry",
+        "listing_type": "full_time",
+        "internship_details": null,
+        "full_time_details": { "employment_type": "full-time", "signing_bonus": 100000, "remote_policy": "onsite" },
+        "requirements": []
+      }
+    ]
+  },
+  {
+    "company_name": "Startup XYZ",
+    "industry": "SaaS",
+    "company_size": "startup",
+    "headquarters_location": "Austin, TX",
+    "website_url": "https://startupxyz.io",
+    "job_listings": [
+      {
+        "listing_id": 14,
+        "title": "Full-Stack Engineer",
+        "role_type": "full-time",
+        "location": "Austin, TX",
+        "posted_date": "2025-11-01",
+        "closing_date": null,
+        "is_active": true,
+        "salary_min": 90000,
+        "salary_max": 120000,
+        "description": "Startup XYZ early stage full-stack",
+        "experience_level": "entry",
+        "listing_type": "full_time",
+        "internship_details": null,
+        "full_time_details": { "employment_type": "full-time", "signing_bonus": 5000, "remote_policy": "remote" },
+        "requirements": []
+      }
+    ]
+  }
+]

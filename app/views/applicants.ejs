@@ -1,0 +1,42 @@
+<%- include('layout/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>Applicants</h1>
+  <a href="/applicants/new" class="btn btn-dark">+ Add Applicant</a>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Username</th>
+        <th>University</th>
+        <th>Degree</th>
+        <th>GPA</th>
+        <th>Skills</th>
+        <th>Applications</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% applicants.forEach(a => { %>
+      <tr>
+        <td><a href="/applicants/<%= a._id %>"><%= a.username %></a></td>
+        <td><%= a.university %></td>
+        <td><%= a.degree_level %></td>
+        <td><%= a.gpa.toFixed(2) %></td>
+        <td><%= a.skills ? a.skills.length : 0 %></td>
+        <td>
+          <% const accepted = a.applications ? a.applications.filter(x => x.status === 'accepted').length : 0; %>
+          <% const total = a.applications ? a.applications.length : 0; %>
+          <%= total %> total
+          <% if (accepted > 0) { %>
+            <span class="badge bg-success"><%= accepted %> accepted</span>
+          <% } %>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('layout/footer') %>

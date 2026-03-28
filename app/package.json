@@ -1,0 +1,19 @@
+{
+  "name": "recruit-log-mongo",
+  "version": "1.0.0",
+  "description": "Recruit.log — Node + Express + MongoDB CRUD Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "mongodb": "^6.10.0",
+    "method-override": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

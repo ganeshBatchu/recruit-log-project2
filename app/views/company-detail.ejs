@@ -1,0 +1,96 @@
+<%- include('layout/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1><%= company.company_name %></h1>
+  <div>
+    <a href="/companies/<%= company._id %>/edit" class="btn btn-outline-secondary btn-sm">Edit</a>
+    <form action="/companies/<%= company._id %>?_method=DELETE" method="POST" class="d-inline"
+          onsubmit="return confirm('Delete this company?')">
+      <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+    </form>
+  </div>
+</div>
+
+<div class="card p-3 mb-4">
+  <p><strong>Industry:</strong> <%= company.industry %></p>
+  <p><strong>Size:</strong> <%= company.company_size %></p>
+  <p><strong>HQ:</strong> <%= company.headquarters_location %></p>
+  <p class="mb-0"><strong>Website:</strong> <a href="<%= company.website_url %>" target="_blank"><%= company.website_url %></a></p>
+</div>
+
+<h3>Job Listings (<%= company.job_listings ? company.job_listings.length : 0 %>)</h3>
+
+<% if (company.job_listings && company.job_listings.length > 0) { %>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Location</th>
+          <th>Salary Range</th>
+          <th>Active</th>
+          <th>Requirements</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% company.job_listings.forEach(l => { %>
+        <tr>
+          <td><strong><%= l.title %></strong></td>
+          <td><span class="badge bg-info"><%= l.listing_type %></span></td>
+          <td><%= l.location %></td>
+          <td>
+            <% if (l.salary_min >= 100000) { %>
+              $<%= (l.salary_min/1000).toFixed(0) %>k – $<%= (l.salary_max/1000).toFixed(0) %>k
+            <% } else { %>
+              $<%= l.salary_min.toLocaleString() %> – $<%= l.salary_max.toLocaleString() %>
+            <% } %>
+          </td>
+          <td>
+            <% if (l.is_active) { %>
+              <span class="badge bg-success">Active</span>
+            <% } else { %>
+              <span class="badge bg-secondary">Closed</span>
+            <% } %>
+          </td>
+          <td>
+            <% if (l.requirements && l.requirements.length > 0) { %>
+              <% l.requirements.forEach(r => { %>
+                <span class="badge <%= r.is_required ? 'bg-danger' : 'bg-warning text-dark' %>" title="<%= r.desired_proficiency %>">
+                  <%= r.skill_name %>
+                </span>
+              <% }) %>
+            <% } else { %>
+              <span class="text-muted">None listed</span>
+            <% } %>
+          </td>
+        </tr>
+        <% if (l.internship_details) { %>
+        <tr>
+          <td colspan="6" class="ps-4 text-muted small">
+            Internship: <%= l.internship_details.season %> &middot;
+            <%= l.internship_details.duration %> &middot;
+            Co-op: <%= l.internship_details.is_coop ? 'Yes' : 'No' %>
+          </td>
+        </tr>
+        <% } %>
+        <% if (l.full_time_details) { %>
+        <tr>
+          <td colspan="6" class="ps-4 text-muted small">
+            Full-time: <%= l.full_time_details.employment_type %> &middot;
+            Signing bonus: $<%= l.full_time_details.signing_bonus ? l.full_time_details.signing_bonus.toLocaleString() : 'N/A' %> &middot;
+            Remote: <%= l.full_time_details.remote_policy %>
+          </td>
+        </tr>
+        <% } %>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<% } else { %>
+  <p class="text-muted">No job listings yet.</p>
+<% } %>
+
+<a href="/companies" class="btn btn-outline-dark mt-3">&larr; Back to Companies</a>
+
+<%- include('layout/footer') %>

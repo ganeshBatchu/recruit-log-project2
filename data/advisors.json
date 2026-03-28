@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Dr. Sarah Chen",
+    "email": "schen@neu.edu",
+    "role": "faculty",
+    "institution": "Northeastern University",
+    "department": "Computer Science",
+    "bookmarks": [
+      { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "last_viewed": "2025-11-01", "is_bookmarked": true },
+      { "company_name": "Stripe", "listing_title": "Backend Intern", "last_viewed": "2025-11-05", "is_bookmarked": true },
+      { "company_name": "Datadog", "listing_title": "Co-op Data Engineer", "last_viewed": "2025-11-10", "is_bookmarked": false }
+    ]
+  },
+  {
+    "name": "Marcus Williams",
+    "email": "mwilliams@mit.edu",
+    "role": "careerCenter",
+    "institution": "MIT",
+    "department": "Career Services",
+    "bookmarks": [
+      { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "last_viewed": "2025-10-15", "is_bookmarked": true },
+      { "company_name": "Jane Street", "listing_title": "Trading Intern", "last_viewed": "2025-10-20", "is_bookmarked": true },
+      { "company_name": "Google", "listing_title": "SWE L3 New Grad", "last_viewed": "2025-11-01", "is_bookmarked": true }
+    ]
+  },
+  {
+    "name": "Dr. Priya Patel",
+    "email": "ppatel@stanford.edu",
+    "role": "faculty",
+    "institution": "Stanford University",
+    "department": "Computer Science",
+    "bookmarks": [
+      { "company_name": "Anthropic", "listing_title": "Research Engineer", "last_viewed": "2025-10-10", "is_bookmarked": true },
+      { "company_name": "Scale AI", "listing_title": "ML Engineer", "last_viewed": "2025-10-15", "is_bookmarked": false }
+    ]
+  },
+  {
+    "name": "James Rodriguez",
+    "email": "jrod@berkeley.edu",
+    "role": "institutionalResearcher",
+    "institution": "UC Berkeley",
+    "department": "Institutional Research",
+    "bookmarks": [
+      { "company_name": "Google", "listing_title": "SWE Intern Summer 2026", "last_viewed": "2025-11-20", "is_bookmarked": false },
+      { "company_name": "Google", "listing_title": "SWE L3 New Grad", "last_viewed": "2025-11-20", "is_bookmarked": true }
+    ]
+  },
+  {
+    "name": "Linda Nakamura",
+    "email": "lnakamura@cmu.edu",
+    "role": "consultant",
+    "institution": "Carnegie Mellon",
+    "department": "Career Services",
+    "bookmarks": []
+  }
+]
